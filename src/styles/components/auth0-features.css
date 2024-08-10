@@ -23,7 +23,7 @@
 
   /* responsive */
 
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 6.4rem;
   row-gap: 6.4rem;
 }

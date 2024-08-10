@@ -39,6 +39,7 @@ export const Auth0ProviderWithNavigate = ({
         scope: 'profile email read:orders create:orders'
       }}
       onRedirectCallback={onRedirectCallback}
+
     >
       {children}
     </Auth0Provider>

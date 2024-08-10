@@ -25,6 +25,10 @@ export const App: React.FC = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route
+        path="/login"
+        element={<AuthenticationGuard component={HomePage} />}
+      />
+      <Route
         path="/profile"
         element={<AuthenticationGuard component={ProfilePage} />}
       />
