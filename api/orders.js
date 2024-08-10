@@ -40,6 +40,11 @@ export async function POST(request) {
     return Response.json(authResult, { status: 401 });
   }
 
+  if (!authResult.payload.email_verified) {
+    return new Response('Emailaddress of user has not yet been verified', {status: 401});
+  }
+
+
   let body = await request.json();
   console.log(body);
 

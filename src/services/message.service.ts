@@ -6,7 +6,7 @@ const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
 
 export const getPublicResource = async (): Promise<ApiResponse> => {
   const config: AxiosRequestConfig = {
-    url: `${apiServerUrl}/api/messages/public`,
+    url: `${apiServerUrl}/api/pizzas`,
     method: "GET",
     headers: {
       "content-type": "application/json",

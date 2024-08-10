@@ -13,9 +13,9 @@ export const MobileNavBarBrand: React.FC<MobileNavBarBrandProps> = ({
       <NavLink to="/">
         <img
           className="mobile-nav-bar__logo"
-          src="https://cdn.auth0.com/blog/hub/code-samples/hello-world/auth0-logo.svg"
-          alt="Auth0 shield logo"
-          width="82"
+          src="https://okta-challenge-ciam.vercel.app/pizza no-background.png"
+          alt="Pizza42 logo"
+          //width="82"
           height="24"
         />
       </NavLink>

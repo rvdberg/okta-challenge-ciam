@@ -7,9 +7,9 @@ export const NavBarBrand: React.FC = () => {
       <NavLink to="/">
         <img
           className="nav-bar__logo"
-          src="https://cdn.auth0.com/blog/hub/code-samples/hello-world/auth0-logo.svg"
-          alt="Auth0 shield logo"
-          width="122"
+          src="https://okta-challenge-ciam.vercel.app/pizza no-background.png"
+          alt="Pizza42 logo"
+          //width="122"
           height="36"
         />
       </NavLink>
