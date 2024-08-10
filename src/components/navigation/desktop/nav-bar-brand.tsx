@@ -9,7 +9,7 @@ export const NavBarBrand: React.FC = () => {
           className="nav-bar__logo"
           src="https://okta-challenge-ciam.vercel.app/pizza no-background.png"
           alt="Pizza42 logo"
-          //width="122"
+          //width="70"
           height="36"
         />
       </NavLink>

@@ -16,7 +16,7 @@ export const MobileNavBarBrand: React.FC<MobileNavBarBrandProps> = ({
           src="https://okta-challenge-ciam.vercel.app/pizza no-background.png"
           alt="Pizza42 logo"
           //width="82"
-          height="24"
+          height="32"
         />
       </NavLink>
     </div>
