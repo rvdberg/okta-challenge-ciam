@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { App } from './app';
 import { Auth0ProviderWithNavigate } from './auth0-provider-with-navigate';
 import { BrowserRouter } from 'react-router-dom';
+import "./styles/styles.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
