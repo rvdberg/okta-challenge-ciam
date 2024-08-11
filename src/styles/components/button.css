@@ -121,6 +121,35 @@
   margin-right: 0;
 }
 
+.button__order {
+  min-width: 8.4rem;
+
+  border: 0.1rem solid var(--indigo);
+  color: var(--white);
+  background: var(--indigo);
+  width: 50%;
+  font-size: 1.6rem;
+
+  margin-right: 1.6rem;
+
+  font-family: var(--font-primary);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.2rem;
+  padding: 0.8rem 0;
+  border-radius: 0.8rem;
+  text-align: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: background 0.3s ease-out, color 0.3s ease-out;
+}
+
+.button__order:disabled {
+  opacity: 0.2;
+}
+
 @media only screen and (min-width: 641px) {
   .button__login,
   .button__logout,

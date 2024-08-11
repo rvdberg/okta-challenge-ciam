@@ -47,7 +47,8 @@ export async function POST(request) {
 
   let body = await request.json();
   console.log(body);
+  let orderHistory = [body];
 
-  return new Response('');
+  return Response.json(orderHistory);
 
 }

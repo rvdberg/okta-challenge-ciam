@@ -1,6 +1,8 @@
 import { AxiosRequestConfig } from "axios";
 import { ApiResponse } from "../models/api-response";
+import { ApiOrderResponse } from "../models/api-order-response";
 import { callExternalApi } from "./external-api.service";
+import { Pizza } from "src/models/pizza";
 
 const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
 
@@ -21,7 +23,7 @@ export const getPizzas = async (): Promise<ApiResponse> => {
   };
 };
 
-export const getOrders = async (accessToken: string): Promise<ApiResponse> => {
+export const getOrders = async (accessToken: string): Promise<ApiOrderResponse> => {
   const config: AxiosRequestConfig = {
     url: `${apiServerUrl}/api/orders`,
     method: "GET",
@@ -31,7 +33,7 @@ export const getOrders = async (accessToken: string): Promise<ApiResponse> => {
     },
   };
 
-  const { data, error } = (await callExternalApi({ config })) as ApiResponse;
+  const { data, error } = (await callExternalApi({ config })) as ApiOrderResponse;
 
   return {
     data,
@@ -39,7 +41,7 @@ export const getOrders = async (accessToken: string): Promise<ApiResponse> => {
   };
 };
 
-export const createOrders = async (accessToken: string): Promise<ApiResponse> => {
+export const createOrders = async (accessToken: string, pizza: Pizza): Promise<ApiOrderResponse> => {
   const config: AxiosRequestConfig = {
     url: `${apiServerUrl}/api/orders`,
     method: "POST",
@@ -47,10 +49,10 @@ export const createOrders = async (accessToken: string): Promise<ApiResponse> =>
       "content-type": "application/json",
       Authorization: `Bearer ${accessToken}`
     },
-    data: {}
+    data: pizza
   };
 
-  const { data, error } = (await callExternalApi({ config })) as ApiResponse;
+  const { data, error } = (await callExternalApi({ config })) as ApiOrderResponse;
 
   return {
     data,
