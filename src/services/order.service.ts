@@ -49,7 +49,11 @@ export const createOrders = async (accessToken: string, pizza: Pizza): Promise<A
       "content-type": "application/json",
       Authorization: `Bearer ${accessToken}`
     },
-    data: pizza
+    data: {
+      id: pizza.id,
+      name: pizza.name,
+      price: pizza.price
+    }
   };
 
   const { data, error } = (await callExternalApi({ config })) as ApiOrderResponse;

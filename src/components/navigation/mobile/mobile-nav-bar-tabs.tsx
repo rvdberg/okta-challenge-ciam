@@ -30,11 +30,6 @@ export const MobileNavBarTabs: React.FC<MobileNavBarTabsProps> = ({
             label="Protected"
             handleClick={handleClick}
           />
-          <MobileNavBarTab
-            path="/admin"
-            label="Admin"
-            handleClick={handleClick}
-          />
         </>
       )}
     </div>

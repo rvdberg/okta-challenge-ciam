@@ -16,7 +16,7 @@ export const PizzaItem: React.FC<PizzaItemProps> = ({pizza, setOrderHistory}) =>
 
     const accessToken = await getAccessTokenSilently();
     const response = await createOrders(accessToken, pizza);
-    setOrderHistory(response.data);
+    setOrderHistory(response.data?.orderHistory);
   };
 
   return (
