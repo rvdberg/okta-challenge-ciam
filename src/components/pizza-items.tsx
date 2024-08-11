@@ -1,8 +1,6 @@
 import React from "react";
 import { PizzaItem } from "./pizza-item";
 import { Pizza } from '../models/pizza'
-import { useAuth0 } from "@auth0/auth0-react";
-import { createOrders } from "src/services/order.service";
 
 interface PizzaItemsProps {
   pizzaList: Pizza[]

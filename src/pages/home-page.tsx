@@ -5,10 +5,13 @@ import { OrderHistory } from "../components/order-history";
 import { getPizzas } from "src/services/order.service";
 import { Pizza } from "src/models/pizza";
 import { Order } from "src/models/order";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const HomePage: React.FC = () => {
+  const { isAuthenticated, user } = useAuth0();
+
   const [pizzas, setPizzas] = useState<Pizza[]>([]);
-  const [orderHistory, setOrderHistory] = useState<Order[]>([]);
+  const [orderHistory, setOrderHistory] = useState<Order[]>(user?.custom_data.orderHistory || []);
 
   useEffect(() => {
     let isMounted = true;
@@ -39,7 +42,9 @@ export const HomePage: React.FC = () => {
     <PageLayout>
       <>
         <PizzaItems pizzaList={pizzas} setOrderHistory={setOrderHistory}/>
-        <OrderHistory orderHistory={orderHistory}/>
+        {isAuthenticated && (
+            <OrderHistory orderHistory={orderHistory} />
+        )}
       </>
     </PageLayout>
   )};

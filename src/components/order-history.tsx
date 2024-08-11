@@ -10,6 +10,4 @@ export const OrderHistory: React.FC<OrderHistoryProps> = ({
   orderHistory,
 }) => (
   <CodeSnippet title="OrderHistory" code={JSON.stringify(orderHistory, null, 2)}/>
-
-
 );
