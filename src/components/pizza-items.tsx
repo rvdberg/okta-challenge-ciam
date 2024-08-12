@@ -11,7 +11,7 @@ export const PizzaItems: React.FC<PizzaItemsProps> = ({pizzaList, setOrderHistor
 
   return (
     <div className="auth0-features">
-      <h2 className="auth0-features__title">Pizza42's famous Pizza's!</h2>
+      <h2 className="auth0-features__title">Pizza 42's galaxy-famous pizza's!</h2>
       <div className="auth0-features__grid">
         {pizzaList.map((pizza) => (
           <PizzaItem key={pizza.id}

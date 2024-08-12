@@ -4,7 +4,12 @@ import { CodeSnippet } from "../components/code-snippet";
 import { PageLayout } from "../components/page-layout";
 
 export const ProfilePage: React.FC = () => {
-  const { user } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
+
+  const handleClick = async () => {
+    getAccessTokenSilently({ cacheMode: 'off' });
+  }
+
 
   if (!user) {
     return null;
@@ -39,6 +44,7 @@ export const ProfilePage: React.FC = () => {
               </div>
             </div>
             <div className="profile__details">
+              <button onClick={handleClick}>Refresh tokens</button>
               <CodeSnippet
                 title="Decoded ID Token"
                 code={JSON.stringify(user, null, 2)}

@@ -6,6 +6,7 @@ import { getPizzas } from "src/services/order.service";
 import { Pizza } from "src/models/pizza";
 import { Order } from "src/models/order";
 import { useAuth0 } from "@auth0/auth0-react";
+import { HeroBanner } from "src/components/hero-banner";
 
 export const HomePage: React.FC = () => {
   const { isAuthenticated, user } = useAuth0();
@@ -41,6 +42,7 @@ export const HomePage: React.FC = () => {
   return (
     <PageLayout>
       <>
+        <HeroBanner />
         <PizzaItems pizzaList={pizzas} setOrderHistory={setOrderHistory}/>
         {isAuthenticated && (
             <OrderHistory orderHistory={orderHistory} />

@@ -14,6 +14,11 @@ export const MobileNavBarTabs: React.FC<MobileNavBarTabsProps> = ({
   return (
     <div className="mobile-nav-bar__tabs">
       <MobileNavBarTab
+        path="/"
+        label="Home"
+        handleClick={handleClick}
+      />
+      <MobileNavBarTab
         path="/profile"
         label="Profile"
         handleClick={handleClick}

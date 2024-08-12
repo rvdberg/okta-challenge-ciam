@@ -14,7 +14,6 @@ export const ProtectedPage: React.FC = () => {
 
     const getMessage = async () => {
       const accessToken = await getAccessTokenSilently();
-      console.log(accessToken);
       const { data, error } = await getProtectedResource(accessToken);
 
       if (!isMounted) {
@@ -46,14 +45,14 @@ export const ProtectedPage: React.FC = () => {
         <div className="content__body">
           <p id="page-description">
             <span>
-              This page retrieves a <strong>protected message</strong> from an
+              This page retrieves the <strong>OrderHistory</strong> from an
               external API.
             </span>
             <span>
               <strong>Only authenticated users can access this page.</strong>
             </span>
           </p>
-          <CodeSnippet title="Protected Message" code={message} />
+          <CodeSnippet title="Orderhistory from API - authorization needed" code={message} />
         </div>
       </div>
     </PageLayout>

@@ -10,7 +10,7 @@ interface PizzaItemProps {
 
 export const PizzaItem: React.FC<PizzaItemProps> = ({pizza, setOrderHistory}) => {
 
-  const { getAccessTokenSilently, isAuthenticated } = useAuth0();
+  const { getAccessTokenSilently, isAuthenticated, user } = useAuth0();
 
   const handleOrder = async () => {
 
@@ -21,7 +21,7 @@ export const PizzaItem: React.FC<PizzaItemProps> = ({pizza, setOrderHistory}) =>
 
   return (
   <div className="auth0-feature">
-      <button className="button__order" disabled={!isAuthenticated} onClick={handleOrder}>
+      <button className="button__order" disabled={!isAuthenticated || !user?.email_verified} onClick={handleOrder}>
       Order
     </button>
     <br />

@@ -41,14 +41,14 @@ export const PublicPage: React.FC = () => {
         <div className="content__body">
           <p id="page-description">
             <span>
-              This page retrieves a <strong>public message</strong> from an
+              This page retrieves the <strong>PizzaList</strong> from an
               external API.
             </span>
             <span>
               <strong>Any visitor can access this page.</strong>
             </span>
           </p>
-          <CodeSnippet title="Public Message" code={message} />
+          <CodeSnippet title="Pizzalist from API - no authorization needed" code={message} />
         </div>
       </div>
     </PageLayout>

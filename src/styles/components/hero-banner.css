@@ -34,6 +34,10 @@
   background: var(--emerald-yellow-gradient);
 }
 
+.hero-banner--mandarine-orange {
+  background: var(--mandarine-orange-gradient);
+}
+
 .hero-banner__logo {
   display: flex;
   justify-content: center;

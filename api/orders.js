@@ -19,7 +19,7 @@ export async function GET(request) {
     return new Response('No User found', {status: 418}); // Love this status!
   }
 
-  const { data: { app_metadata: { pizza42_data = {}} }} = await managementClient.users.get({ id: userId, fields: 'app_metadata' });
+  const { data: { app_metadata: { pizza42_data = {}} = {} }} = await managementClient.users.get({ id: userId, fields: 'app_metadata' });
 
   const responseData = {
     orderHistory: pizza42_data.orderHistory || []
@@ -57,7 +57,8 @@ export async function POST(request) {
     price: price
   }
 
-  const { data: { app_metadata: { pizza42_data = {} } } } = await managementClient.users.get({ id: userId, fields: 'app_metadata' });
+  const { data: { app_metadata: { pizza42_data = {} } = {} } } = await managementClient.users.get({ id: userId, fields: 'app_metadata' });
+  
   const currentOrderHistory = pizza42_data.orderHistory?.slice(0,9) || [];
   const modifiedOrderHistory = [currentOrder, ...currentOrderHistory];
 
