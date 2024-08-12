@@ -48,7 +48,8 @@
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/node": "^22.2.0"
+    "@types/node": "^22.2.0",
+    "vercel": "^35.2.4"
   },
   "type": "module"
 }

@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Okta Challenge - Pizza 42
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a combination of Create-React-App and Vercel Serverless functions.  
+It's current hosted at Vercel with url: https://okta-challenge-ciam.vercel.app/
 
-## Available Scripts
+## To start
 
-In the project directory, you can run:
+Start with `pnpm install`
 
-### `npm start`
+After creating a new .env file `touch .env` and filling out the variables based on the example file [.env.local.example](.env.local.example) you can run the app locally with
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `pnpm exec vercel dev`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**if that doesn't work than most likely Vercel doesn't allow unathorized access ;), sorry haven't tested this**
 
-### `npm test`
+Luckily the project is running live at [Pizza 42 Prod](https://okta-challenge-ciam.vercel.app/)!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Additional info
+Client and resource server configuration can be found [here](./auth0%20environment/Clients.md)  
+Auth0 Action used for enriching the ID token with order history is [here](./auth0%20environment/Enrich-ID%20action.js)
 
-### `npm run build`
+I've set the Auth0 React config to store the tokens in local cache for ease of access for demonstration (and development) purposes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Customer can signup and login (including Google social)
+- EmailAddress verification needed before ordering is allowed
+- API needs valid Access Token including the correct scopes
+- Valid order is stored in User's app_metadata
+- Custom data for Pizza42 app is added to the ID token
+- Some unintended bugs that may be regarded as features 🙈
+---
+Best,  
+Rutger van den Berg
